@@ -3,6 +3,13 @@ import {animals} from '../data/AnimalsDb';
 
 export default function GameBase() {
     const [animalName, setAnimalName] = useState('');
+    const matchAnimal=()=>{
+        if (animalName === 'deer') {
+            alert ('Won')
+        } else {
+            alert ('Lose')            
+        }
+    }
   return (
     <div>
         {animals.map((animal)=>(
@@ -13,8 +20,8 @@ export default function GameBase() {
                     onClick={()=>setAnimalName(animal.name)}
                 />
             </button>
-        ))}
-        <p>{animalName}</p>
+        ))} 
+        <p onPlay={matchAnimal}></p>
     </div>
   );
 }
